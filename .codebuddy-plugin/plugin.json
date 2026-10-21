@@ -1,0 +1,53 @@
+{
+  "name": "cgt-expert",
+  "version": "1.0.0",
+  "description": "Cell & gene therapy expert covering modality selection, CMC and lot release, clinical endpoint design, China/US/EU regulatory pathways, genome safety assessment, BD deal structuring and rNPV valuation.",
+  "author": {
+    "name": "dzp",
+    "email": "dzp181@users.noreply.github.com"
+  },
+  "agents": ["./agents/cgt-expert.md"],
+  "skills": ["./skills/cgt-toolkit"],
+
+  "expertType": "agent",
+  "agentName": "cgt-expert",
+
+  "displayName": {
+    "en": "Cell & Gene Therapy (CGT) Expert",
+    "zh": "细胞与基因治疗（CGT）专家"
+  },
+  "profession": {
+    "en": "Cell & Gene Therapy (CGT) Expert",
+    "zh": "细胞与基因治疗（CGT）专家"
+  },
+  "displayDescription": {
+    "en": "Full-chain CGT advisor: modality and target selection, CMC and lot release, clinical endpoint design, China/US/EU regulatory pathways, genome safety, and BD valuation.",
+    "zh": "CGT 全链条顾问：路线与靶点选型、CMC 放行、临床终点、中美欧注册、基因组安全与估值。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "12-IndustryConsultant",
+  "defaultInitPrompt": {
+    "zh": "我要做一个靶向 GPRC5D 的自体 CAR-T 治疗复发难治多发性骨髓瘤，帮我判断这条路线是否成立，并给出剂量策略、CMC 关键放行项和单臂注册需要的数据。",
+    "en": "I'm developing an autologous GPRC5D CAR-T for relapsed/refractory multiple myeloma. Assess whether the modality holds up, then give me the dose strategy, critical CMC release items, and the data package needed for a single-arm registration."
+  },
+  "plugin": "cgt-expert",
+  "tags": [
+    { "en": "Modality & Target Selection", "zh": "技术路线与靶点选型" },
+    { "en": "CMC & Lot Release", "zh": "CMC 与放行检测" },
+    { "en": "Clinical & Regulatory Strategy", "zh": "临床与注册策略" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I'm developing an autologous GPRC5D CAR-T for relapsed/refractory multiple myeloma. Assess whether the modality holds up, then give me the dose strategy, critical CMC release items, and the data package needed for a single-arm registration.",
+      "zh": "我要做一个靶向 GPRC5D 的自体 CAR-T 治疗复发难治多发性骨髓瘤，帮我判断这条路线是否成立，并给出剂量策略、CMC 关键放行项和单臂注册需要的数据。"
+    },
+    {
+      "en": "Our AAV gene therapy candidate caused grade 3 transaminase elevation in 3 patients in Phase I. Determine whether the driver is vector dose, the immunosuppression regimen, or batch variability, and propose concrete protocol changes.",
+      "zh": "我们的 AAV 基因治疗产品在 I 期出现 3 例 3 级转氨酶升高，帮我判断是载体剂量、免疫抑制方案还是批次差异导致的，并给出具体的方案调整建议。"
+    },
+    {
+      "en": "Value a Phase II CD19 autologous CAR-T asset with rNPV: state the parameter assumptions, run a sensitivity analysis, and flag the valuation traps specific to cell therapy.",
+      "zh": "用一个临床 II 期的 CD19 自体 CAR-T 资产做 rNPV 估值：给出参数假设、敏感性分析，并指出细胞治疗估值特有的陷阱。"
+    }
+  ]
+}

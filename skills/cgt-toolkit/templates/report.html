@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{报告标题}}</title>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#1a1d21; --ink-2:#4a5157; --ink-3:#7a8288;
+    --line:#e3e6e9; --line-2:#f0f2f4; --accent:#0f6b6b; --accent-soft:#e6f2f2;
+    --warn:#a8541a; --warn-soft:#fdf1e7; --risk:#a3232b; --risk-soft:#fbecec;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:56px 28px 96px}
+  header{border-bottom:2px solid var(--ink); padding-bottom:20px; margin-bottom:36px}
+  .kicker{font-size:12px; letter-spacing:.16em; color:var(--accent); text-transform:uppercase; margin-bottom:10px}
+  h1{font-size:30px; line-height:1.35; margin:0 0 12px; letter-spacing:-.01em}
+  .meta{font-size:13px; color:var(--ink-3)}
+  .meta span{margin-right:18px; white-space:nowrap}
+  h2{font-size:19px; margin:44px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); letter-spacing:-.005em}
+  h3{font-size:15px; margin:26px 0 8px; color:var(--ink-2)}
+  p{margin:0 0 12px}
+  ul,ol{margin:0 0 12px; padding-left:22px}
+  li{margin-bottom:6px}
+  table{width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:13.5px}
+  th,td{border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top}
+  th{background:var(--line-2); font-weight:600; color:var(--ink-2)}
+  tbody tr:nth-child(even) td{background:#fbfcfc}
+  td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+  .lead{font-size:16px; line-height:1.8; color:var(--ink); background:var(--accent-soft);
+    border-left:3px solid var(--accent); padding:16px 20px; margin:0 0 28px; border-radius:0 4px 4px 0}
+  .callout{border:1px solid var(--line); border-left:3px solid var(--warn); background:var(--warn-soft);
+    padding:14px 18px; margin:0 0 20px; border-radius:0 4px 4px 0; font-size:14px}
+  .risk{border-left-color:var(--risk); background:var(--risk-soft)}
+  .kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1px;
+    background:var(--line); border:1px solid var(--line); margin:14px 0 22px}
+  .kv div{background:#fff; padding:12px 14px}
+  .kv dt{font-size:12px; color:var(--ink-3); margin:0 0 4px}
+  .kv dd{margin:0; font-size:17px; font-weight:600; font-variant-numeric:tabular-nums}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px;
+    background:var(--line-2); padding:1.5px 5px; border-radius:3px}
+  pre{background:#f8f9fa; border:1px solid var(--line); padding:14px 16px; overflow-x:auto; font-size:12.5px; line-height:1.6}
+  footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-3)}
+  @media print{
+    .wrap{padding:0} h2{page-break-after:avoid} table{page-break-inside:avoid}
+    body{font-size:11.5pt}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Cell &amp; Gene Therapy Assessment</div>
+  <h1>{{报告标题}}</h1>
+  <div class="meta">
+    <span>产品：{{产品名称}}</span>
+    <span>适应症：{{适应症}}</span>
+    <span>阶段：{{阶段}}</span>
+    <span>日期：{{YYYY-MM-DD}}</span>
+  </div>
+</header>
+
+<!-- 一、结论先行 -->
+<h2>一、结论摘要</h2>
+<p class="lead">
+  {{3–5 句话的判断：这条路是否成立 + 最关键依据 + 下一步必须做的动作。}}
+</p>
+<div class="kv">
+  <div><dt>技术可行性</dt><dd>{{高 / 中 / 低}}</dd></div>
+  <div><dt>CMC 就绪度</dt><dd>{{高 / 中 / 低}}</dd></div>
+  <div><dt>临床可执行性</dt><dd>{{高 / 中 / 低}}</dd></div>
+  <div><dt>商业可达性</dt><dd>{{高 / 中 / 低}}</dd></div>
+</div>
+
+<!-- 二、关键假设 -->
+<h2>二、关键假设与口径</h2>
+<table>
+  <thead><tr><th style="width:20%">参数</th><th style="width:16%">取值</th><th style="width:32%">依据</th><th>敏感性</th></tr></thead>
+  <tbody>
+    <tr><td>目标剂量</td><td class="num">{{值}}</td><td>{{依据}}</td><td>{{高 / 中 / 低}}</td></tr>
+    <tr><td>VCN / 编辑率</td><td class="num">{{值}}</td><td>{{依据}}</td><td>{{}}</td></tr>
+    <tr><td>单例 COGS</td><td class="num">{{值}}</td><td>{{依据}}</td><td>{{}}</td></tr>
+    <tr><td>目标定价</td><td class="num">{{值}}</td><td>{{依据}}</td><td>{{}}</td></tr>
+  </tbody>
+</table>
+
+<!-- 三、技术路线 -->
+<h2>三、技术路线与选型</h2>
+<table>
+  <thead><tr><th>路线</th><th>机制与载体</th><th>关键约束</th><th>证据等级</th><th>差异化点</th><th>失败风险</th></tr></thead>
+  <tbody>
+    <tr><td>{{路线 A}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>{{路线 B}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+  </tbody>
+</table>
+
+<!-- 四、CMC -->
+<h2>四、CMC 与放行</h2>
+<h3>4.1 关键放行项</h3>
+<table>
+  <thead><tr><th>类别</th><th>项目</th><th>方法</th><th>规格</th><th>风险</th></tr></thead>
+  <tbody>
+    <tr><td>身份</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>效力</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>基因组安全</td><td>{{VCN / RCL / 插入位点}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>微生物</td><td>{{}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+  </tbody>
+</table>
+<h3>4.2 产能与成本</h3>
+<pre>{{cgt_calc.py cell / aav / cogs 的原始输出粘贴在此}}</pre>
+
+<!-- 五、临床 -->
+<h2>五、临床开发设计</h2>
+<table>
+  <thead><tr><th>要素</th><th>设计</th><th>依据</th><th>风险</th></tr></thead>
+  <tbody>
+    <tr><td>剂量递增</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>DLT 观察窗</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>主要终点</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>对照策略</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>长期随访</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+  </tbody>
+</table>
+
+<!-- 六、法规 -->
+<h2>六、注册路径</h2>
+<table>
+  <thead><tr><th>市场</th><th>路径</th><th>适用法规（文号 / 生效日）</th><th>关键节点</th><th>主要风险</th></tr></thead>
+  <tbody>
+    <tr><td>中国</td><td>{{药品 / 生物医学新技术}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>美国</td><td>{{IND → BLA}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+    <tr><td>欧盟</td><td>{{ATMP}}</td><td>{{}}</td><td>{{}}</td><td>{{}}</td></tr>
+  </tbody>
+</table>
+
+<!-- 七、估值 -->
+<h2>七、商业化与估值</h2>
+<pre>{{cgt_calc.py rnpv 的输出与敏感性表}}</pre>
+
+<!-- 八、风险 -->
+<h2>八、风险、Kill criteria 与下一步</h2>
+<div class="callout">
+  <strong>最高优先级风险</strong>：{{一句话}}
+</div>
+<div class="callout risk">
+  <strong>Kill criteria</strong>：{{出现什么数据就应停止或重估，带量化阈值}}
+</div>
+<h3>下一步（30 / 60 / 90 天）</h3>
+<ol>
+  <li>{{30 天：}}</li>
+  <li>{{60 天：}}</li>
+  <li>{{90 天：}}</li>
+</ol>
+
+<footer>
+  本报告为技术与商业分析，不构成投资建议、不构成临床诊疗意见；GMP 合规性须经现场审计确认；
+  法规条款、获批状态与价格信息以官方最新发布为准，报告中的引用请按 {{信息截止时间}} 核验。
+</footer>
+
+</div>
+</body>
+</html>
